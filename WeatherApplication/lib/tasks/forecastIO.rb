@@ -25,7 +25,7 @@ for weather_station in weather_stations
 	elsif(time.hour == 9) 
 		time_since_9am = time.min.to_f/60+time.sec.to_f/3600
 	else
-		time_since_9am = (24-9)+time.hour +time.min.to_f/60+time.sec.to_f/3600
+		time_since_9am = (24-9)+time.hour+time.min.to_f/60+time.sec.to_f/3600
 	end
 	# Print the weather
 	puts "Name:#{weather_station.name}|Temp:#{forecast['currently']['temperature']}|Dew_Point:#{forecast['currently']['dewPoint']}|Wind_Speed:#{forecast['currently']['windSpeed']}|Wind_Direction:#{forecast['currently']['windBearing']}|Rainfall_amount:#{forecast['currently']['precipIntensity']*time_since_9am}"
