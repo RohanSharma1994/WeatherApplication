@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150420054053) do
+ActiveRecord::Schema.define(version: 20150420061242) do
 
   create_table "daily_observations", force: :cascade do |t|
     t.datetime "date_time"
@@ -44,7 +44,6 @@ ActiveRecord::Schema.define(version: 20150420054053) do
 
   create_table "weather_stations", force: :cascade do |t|
     t.string   "name"
-    t.string   "station_id"
     t.float    "lat"
     t.float    "lon"
     t.datetime "created_at", null: false
