@@ -17,5 +17,10 @@ rows = body.css('tr')
 
 # Get the data from each row
 for row in rows
-	puts "Name:#{row.css('th').text}|Temp:#{[headers~='obs-temp'].text}|Dew_Point:#{[headers~='obs-dewpoint'].text}|Wind_Speed:#{[headers~='obs-wind-spd-kph'].text}|Wind_Direction:#{[headers~='obs-wind-dir'].text}|Rainfall_amount:#{[headers~='obs-rainsince9am'].text}"
+	print "Name:#{row.css('th').text}|"
+	print "Temp:#{row.css('[headers~=obs-temp]').text}|"
+	print "Dew_Point:#{row.css('[headers~=obs-dewpoint]').text}|"
+	print "Wind_Speed:#{row.css('[headers~=obs-wind-spd-kph]').text}|"
+	print "Wind_Direction:#{row.css('[headers~=obs-wind-dir]').text}|"
+	puts "Rainfaull_Amount:#{row.css('[headers~=obs-rainsince9am]').text}"
 end
