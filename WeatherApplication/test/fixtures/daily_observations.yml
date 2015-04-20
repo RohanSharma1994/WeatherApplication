@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_time: 2015-04-20 14:05:36
+  source: MyString
+
+two:
+  date_time: 2015-04-20 14:05:36
+  source: MyString
