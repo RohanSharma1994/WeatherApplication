@@ -1,6 +1,6 @@
 class DailyObservation < ActiveRecord::Base
 	belongs_to :weather_station
-	has_many :temperature_observations
-	has_many :wind_observations
-	has_many :rain_observations
+	has_one :temperature_observation
+	has_one :wind_observation
+	has_one :rain_observation
 end
