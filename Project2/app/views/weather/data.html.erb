@@ -1,0 +1,46 @@
+<!-- Show all the weather stations for Bureau of Meteorology -->
+<h1> Bureau of Meteorology </h1>
+<table>
+<tr>
+	<th>Station Name</th>
+	<th>Current Temperature (°C)</th>
+	<th>Dew Point (°C)</th>
+	<th>Wind Speed (km/h)</th>
+	<th>Wind direction (Bearing)</th>
+	<th>Rainfall Intensity (mm/h)</th>
+</tr>
+<%for weather_station in @weather_stations%>
+	<% daily_observation = weather_station.latest_observation "BOM"%>
+	<tr>
+		<td><%= weather_station.name %></td>
+		<td><%= if daily_observation then daily_observation.latest_temperature else "-" end%></td>
+	    <td><%= if daily_observation then daily_observation.latest_dew_point else "-" end%></td>
+	    <td><%= if daily_observation then daily_observation.latest_wind_speed else "-" end%></td>
+        <td><%= if daily_observation then daily_observation.latest_wind_direction else "-" end%></td>
+	    <td><%= if daily_observation then daily_observation.latest_rainfall_amount else "-" end%></td>
+	</tr>
+<% end %>
+</table>
+
+<h1> ForecastIO</h1>
+<table>
+<tr>
+	<th>Station Name</th>
+	<th>Current Temperature (°C)</th>
+	<th>Dew Point (°C)</th>
+	<th>Wind Speed (km/h)</th>
+	<th>Wind direction (Bearing)</th>
+	<th>Rainfall Intensity (mm/h)</th>
+</tr>
+<%for weather_station in @weather_stations%>
+	<% daily_observation = weather_station.latest_observation "FIO"%>
+	<tr>
+		<td><%= weather_station.name %></td>
+		<td><%= if daily_observation then daily_observation.latest_temperature else "-" end%></td>
+	    <td><%= if daily_observation then daily_observation.latest_dew_point else "-" end%></td>
+	    <td><%= if daily_observation then daily_observation.latest_wind_speed else "-" end%></td>
+        <td><%= if daily_observation then daily_observation.latest_wind_direction else "-" end%></td>
+	    <td><%= if daily_observation then daily_observation.latest_rainfall_amount else "-" end%></td>
+	</tr>
+<% end %>
+</table>

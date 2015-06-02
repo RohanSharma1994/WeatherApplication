@@ -1,0 +1,12 @@
+Name: Rohan Sharma
+S.N: 639271
+
+Running instructions:
+sudo gem install whenever
+bundle install
+rake db:create
+rake db:migrate
+rake db:seed
+whenever -i
+rails s
+
